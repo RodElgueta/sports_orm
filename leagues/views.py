@@ -45,8 +45,8 @@ def index2(request):
 		'oldwichi' : Player.objects.exclude(curr_team__team_name__icontains="Vikings").filter(all_teams__team_name__icontains="vikings"),
 		'jacob' : Team.objects.filter(all_players__first_name__icontains="jacob",all_players__last_name__icontains="gray").exclude(team_name__icontains="colts"),
 		'joshua' : Player.objects.filter(all_teams__league__name__icontains="Atlantic Federation of Amateur Baseball Players").filter(first_name__icontains="joshua"),
-		'12steams' : Team.objects.annotate(Count('curr_players')).annotate(Count('all_players')).filter(curr_players__count__gte=12).filter(all_players__count__gte=12),
-		'allplayers' : Player.objects.annotate(Count('all_teams')).order_by('all_teams__count')
+		'12steams' : Team.objects.annotate(Count('curr_players')).annotate(Count('all_players')).filter(curr_players__count__gte=12).filter(all_players__count__gte=12).order_by('-all_players__count'),
+		'allplayers' : Player.objects.annotate(Count('all_teams')).order_by('-all_teams__count')
 		}
 
 	return render(request, "leagues/index2.html", context)

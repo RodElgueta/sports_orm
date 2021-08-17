@@ -1,0 +1,26 @@
+... todas las ligas de béisbol
+... todas las ligas de mujeres
+... todas las ligas donde el deporte es cualquier tipo de hockey
+... todas las ligas donde el deporte no sea football
+... todas las ligas que se llaman "conferencias"
+... todas las ligas de la región atlántica
+... todos los equipos con sede en Dallas
+... todos los equipos nombraron los Raptors
+... todos los equipos cuya ubicación incluye "Ciudad"
+... todos los equipos cuyos nombres comienzan con "T"
+... todos los equipos, ordenados alfabéticamente por ubicación
+... todos los equipos, ordenados por nombre de equipo en orden alfabético inverso
+... cada jugador con apellido "Cooper"
+... cada jugador con nombre "Joshua"
+... todos los jugadores con el apellido "Cooper" EXCEPTO aquellos con "Joshua" como primer nombre
+... todos los jugadores con nombre "Alexander" O nombre "Wyatt"
+Sugerencia: ¡Intenta editar el diccionario de contexto para estas consultas
+
+context = {
+	# comenta la clave "leagues" para que no entren en conflicto
+	# "leagues": League.objects.all(),
+	"teams": Team.objects.all(),
+	"players": Player.objects.all(),
+	# query 1: Todas las ligas de beisbol
+	"leagues": League.objects.something(something=something),
+}

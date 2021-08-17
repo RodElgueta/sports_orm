@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/">Sports 1</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Dropdown
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluid bg-dark min-vh-100 text-light">
+        <h1>Atlantic Soccer Teams</h1>
+		
+		<ol>
+			{% for team in atlsoccteams %}
+			
+            <li>{{team.team_name}}</li>
+			{% endfor %}
+		</ol>
+
+        <h1>Actual Players in Boston Penguins</h1>
+		
+		<ol>
+			{% for player in pbostonpenguin %}
+			
+            <li>{{player.first_name}} {{player.last_name}}</li>
+			{% endfor %}
+		</ol>
+
+        <h1>All Players in Int Collegiate Baseball Conf.</h1>
+		
+		<ol>
+			{% for player in playerinbaseball %}
+			
+            <li>{{player.first_name}} {{player.last_name}}</li>
+			{% endfor %}
+		</ol>
+
+
+        <h1>All Flores in Football Amateur American Conf. </h1>
+        <ol>
+			{% for player in hockeyflores %}
+			
+            <li>{{player.first_name}} {{player.last_name}}</li>
+			{% endfor %}
+		</ol>
+
+        <h1>All Football Players </h1>
+        <ol>
+			{% for player in allfoot %}
+			
+            <li>{{player.first_name}} {{player.last_name}}</li>
+			{% endfor %}
+		</ol>
+
+        <h1>All Teams with Sophia</h1>
+        <ol>
+			{% for team in sophiateams %}
+			
+            <li>{{team.team_name}}</li>
+			{% endfor %}
+		</ol>
+        
+        <h1>All Leagues with Sophia</h1>
+        <ol>
+			{% for league in sophialeagues %}
+			
+            <li>{{league.name}}</li>
+			{% endfor %}
+		</ol>
+
+        <h1>All Flores not in Roughriders</h1>
+        <ol>
+			{% for player in floresnotin %}
+			
+            <li>{{player.first_name}} {{player.last_name}}</li>
+			{% endfor %}
+		</ol>
+
+        <h1>All Samuel Evans Teams</h1>
+        <ol>
+			{% for team in samuel %}
+			
+            <li>{{team.team_name}}</li>
+			{% endfor %}
+		</ol>
+
+        <h1>All players of tiger cats manitoba</h1>
+        <ol>
+			{% for player in gatos%}
+			
+            <li>{{player.first_name}} {{player.last_name}}</li>
+			{% endfor %}
+		</ol>
+
+        <h1>All Previous Players in Wichita Vikings</h1>
+        <ol>
+			{% for player in oldwichi%}
+			
+            <li>{{player.first_name}} {{player.last_name}}</li>
+			{% endfor %}
+		</ol>
+
+        <h1>All Jacob Previous Teams</h1>
+        <ol>
+			{% for team in jacob%}
+			
+            <li>{{team.team_name}}</li>
+			{% endfor %}
+		</ol>
+
+        <h1>All Joshua's on Atl. Baseball Federation</h1>
+        <ol>
+			{% for player in joshua%}
+			
+            <li>{{player.first_name}} {{player.last_name}}</li>
+			{% endfor %}
+		</ol>
+
+        <h1>All Teams with 12 or more players</h1>
+        <ol>
+			{% for team in 12steams%}  
+			
+            <li>{{team.team_name}} ({{team.all_players__count}})</li>
+			{% endfor %}
+		</ol>
+
+        
+        <h1>All Players ordered by number of teams</h1>
+        <ol>
+			{% for player in allplayers%}
+			
+            <li>{{player.first_name}} {{player.last_name}} ({{player.all_teams__count}})</li>
+			{% endfor %}
+		</ol>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+</body>
+</html>

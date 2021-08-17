@@ -1,0 +1,17 @@
+Esta es la segunda parte de la asignación Sports ORM. Ten en cuenta que, en los modelos, cada jugador tiene exactamente un .curr_team, y cada equipo tiene exactamente una .league. Modifique apps / leagues / views.py y / o apps / leagues / templates / leagues / index.html para que cuando inicie el servidor, la página de índice muestre:
+
+... todos los equipos en la Atlantic Soccer Conference
+... todos los jugadores (actuales) en los Boston Penguins
+... todos los jugadores (actuales) en la International Collegiate Baseball Conference
+... todos los jugadores (actuales) en la lige de hockey apellido flores
+... todos los jugadores de fútbol
+... todos los equipos con un jugador (actual) llamado "Sophia"
+... todas las ligas con un jugador (actual) llamado "Sophia"
+... todos con el apellido "Flores" que NO (actualmente) juegan para los Washington Roughriders
+... todos los equipos, pasados y presentes, con los que Samuel Evans ha jugado
+... todos los jugadores, pasados y presentes, con los gatos tigre de Manitoba
+... todos los jugadores que anteriormente estaban (pero que no lo están) con los Wichita Vikings
+... cada equipo para el que Jacob Gray jugó antes de unirse a los Oregon Colts
+... todos llamados "Joshua" que alguna vez han jugado en la Federación Atlántica de Jugadores de Béisbol Amateur
+... todos los equipos que han tenido 12 o más jugadores, pasados y presentes. (SUGERENCIA: busque la función de anotación de Django).
+... todos los jugadores y el número de equipos para los que jugó, ordenados por la cantidad de equipos para los que han jugado

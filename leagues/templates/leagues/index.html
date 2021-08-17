@@ -1,32 +1,211 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<title>Sports Leagues</title>
+</head>
 <html>
-	<head>
-		<title>Sports Leagues</title>
-	</head>
-	<body>
-		<h1>Leagues</h1>
+
+<body>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<div class="container-fluid">
+			<a class="navbar-brand" href="#">Navbar</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+					<li class="nav-item">
+						<a class="nav-link active" aria-current="page" href="index2">Sports 2</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#anchor13">Original Data</a>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+							Dropdown
+						</a>
+						<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+						
+							<li><a class="dropdown-item" href="#anchor1">Leagues</a></li>
+							<li><a class="dropdown-item" href="#anchor2">Teams</a></li>
+							<li><a class="dropdown-item" href="#anchor3">Players</a></li>
+							
+						
+						</ul>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+					</li>
+				</ul>
+				<form class="d-flex">
+					<input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+					<button class="btn btn-outline-success" type="submit">Search</button>
+				</form>
+			</div>
+		</div>
+	</nav>
+	<div class="container-fluid bg-dark min-vh-100 text-light">
+		<a name="anchor1"></a>
+		<h1>Baseball leagues</h1>
+		
 		<ol>
-			{% for league in leagues %}
+			{% for league in baseleagues %}
+			<li>{{league.name}}</li>
+			{% endfor %}
+		</ol>
+		
+		<h1>Womens leagues</h1>
+		<ol>
+			{% for league in femleagues %}
+			<li>{{league.name}}</li>
+			{% endfor %}
+		</ol>
+		
+		<h1>Hockey leagues</h1>
+		<ol>
+			{% for league in anyhockey %}
+			<li>{{league.name}} -- {{league.sport}}</li>
+			{% endfor %}
+			
+		</ol>
+		
+		<h1>Non football leagues</h1>
+		<ol>
+			{% for league in notfoot %}
+			<li>{{league.name}}</li>
+			{% endfor %}
+		</ol>
+		<h1>Conferences</h1>
+		<ol>
+			{% for league in conferences %}
+			<li>{{league.name}}</li>
+			{% endfor %}
+		</ol>
+		<h1>Atlantic leagues</h1>
+		<ol>
+			{% for league in atlantic %}
+			<li>{{league.name}}</li>
+			{% endfor %}
+		</ol>
+		<a name="anchor2"></a>
+		<h1>Dallas teams</h1>
+		<ol>
+			{% for team in dalteams %}
+			<li>{{team.team_name}}</li>
+			{% endfor %}
+		</ol>
+		<h1>Raptors teams</h1>
+		<ol>
+			{% for team in raptors %}
+			<li>{{team.team_name}} -- {{team.league.name}}</li>
+			{% endfor %}
+		</ol>
+		<h1>Teams with T</h1>
+		<ol>
+			{% for team in teamswitht %}
+			<li>{{team.team_name}} </li>
+			{% endfor %}
+		</ol>
+		<h1>City teams</h1>
+		<ol>
+			{% for team in cityteams %}
+			<li>{{team.team_name}} -- {{team.location}}</li>
+			{% endfor %}
+		</ol>
+		<h1>Teams order location</h1>
+		<ol>
+			{% for team in locationdesc %}
+			<li>{{team.team_name}} -- {{team.location}}</li>
+			{% endfor %}
+		</ol>
+		<h1>Teams order by name desc</h1>
+		<ol>
+			{% for team in nameasc %}
+			<li>{{team.team_name}}</li>
+			{% endfor %}
+		</ol>
+		<a name="anchor3"></a>
+		<h1>Players last_name cooper</h1>
+		<ol>
+			{% for player in coopers %}
+			<li>{{player.first_name}}---{{player.last_name}}</li>
+			{% endfor %}
+		</ol>
+		<h1>Joshuas</h1>
+		<ol>
+			{% for player in joshuas %}
+			<li>{{player.first_name}}---{{player.last_name}}</li>
+			{% endfor %}
+		</ol>
+		<h1>Coopers not joshua</h1>
+		<ol>
+			{% for player in coopersnotjoshua %}
+			<li>{{player.first_name}}---{{player.last_name}}</li>
+			{% endfor %}
+		</ol>
+		<a name="anchor12"></a>
+		<h1>Alexs or Wyatts</h1>
+		<ol>
+			{% for player in alexorwyatt%}
+			<li>{{player.first_name}}---{{player.last_name}}</li>
+			{% endfor %}
+		</ol>
+		<h1>Atl. Soccer Teams</h1>
+		<ol>
+			{% for player in alexorwyatt%}
+			<li>{{player.first_name}}---{{player.last_name}}</li>
+			
+			{% endfor %}
+		</ol>	
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<a name="anchor13"></a>
+			<h1>Leagues</h1>
+			<ol>
+				{% for league in leagues %}
 				<li>{{league.name}}</li>
-			{% empty %}
+				{% empty %}
 				<p>No leagues found.  Try <code>python manage.py loaddata data.json</code>, or, if that doesn't work, going <a href="{% url 'make_data' %}">here</a> (but be prepared to wait).</p>
-			{% endfor %}
-		</ol>
-		<h1>Teams</h1>
-		<ol>
-			{% for team in teams %}
+				{% endfor %}
+			</ol>
+			<h1>Teams</h1>
+			<ol>
+				{% for team in teams %}
 				<li>{{team.location}} {{team.team_name}}</li>
-			{% empty %}
+				{% empty %}
 				<p>No teams found.  Try <code>python manage.py loaddata data.json</code>, or, if that doesn't work, going <a href="{% url 'make_data' %}">here</a> (but be prepared to wait).</p>
-			{% endfor %}
-		</ol>
-		<h1>Players</h1>
-		<ol>
-			{% for player in players %}
+				{% endfor %}
+			</ol>
+			<h1>Players</h1>
+			<ol>
+				{% for player in players %}
 				<li>{{player.first_name}} {{player.last_name}}</li>
-			{% empty %}
+				{% empty %}
 				<p>No teams found.  Try <code>python manage.py loaddata data.json</code>, or, if that doesn't work, going <a href="{% url 'make_data' %}">here</a> (but be prepared to wait).</p>
-			{% endfor %}
-		</ol>
+				{% endfor %}
+			</ol>
+		</div>
+		{%for item in context%}
+		<p>{item}</p>
+		
+		{%endfor%}
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+	
 	</body>
-</html>
+	</html>
